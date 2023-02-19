@@ -512,10 +512,10 @@ require_once dirname(__FILE__) . '/fun-custom.php';
 function pk_update()
 {
     $update_server = pk_get_option('update_server');
-    $check_period = pk_get_option('update_server_check_period');
-    if (empty($check_period) || !is_numeric($check_period)) {
-        $check_period = 6;
-    }
+    // $check_period = pk_get_option('update_server_check_period');
+    // if (empty($check_period) || !is_numeric($check_period)) {
+    //     $check_period = 6;
+    // }
     $current_theme_dir_name = basename(dirname(__FILE__));
     include('update-checker/plugin-update-checker.php');
     switch ($update_server) {
@@ -524,8 +524,7 @@ function pk_update()
                 $pkUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
                     'https://github.com/Licoy/wordpress-theme-puock',
                     __FILE__,
-                    PUOCK,
-                    $check_period
+                    PUOCK
                 );
             }
             break;
@@ -534,8 +533,7 @@ function pk_update()
                 $pkUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
                     'https://licoy.cn/go/puock-update.php?r=fastgit',
                     __FILE__,
-                    PUOCK,
-                    $check_period
+                    PUOCK
                 );
             }
             break;
@@ -544,8 +542,7 @@ function pk_update()
             $pkUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
                 'https://licoy.cn/go/puock-update.php?r=worker',
                 __FILE__,
-                PUOCK,
-                $check_period
+                PUOCK
             );
         }
     }

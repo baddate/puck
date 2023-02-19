@@ -69,13 +69,13 @@ class OptionResource extends BaseOptionItem{
                         ]
                     ],
                 ],
-                [
-                    'id' => 'update_server_check_period',
-                    'label' => __('主题更新检测频率', PUOCK),
-                    'type' => 'number',
-                    'sdt' => 6,
-                    'tips'=>__('单位为小时', PUOCK),
-                ],
+                // [
+                //     'id' => 'update_server_check_period',
+                //     'label' => __('主题更新检测频率', PUOCK),
+                //     'type' => 'number',
+                //     'sdt' => 6,
+                //     'tips'=>__('单位为小时', PUOCK),
+                // ],
             ],
         ];
     }
